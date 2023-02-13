@@ -64,11 +64,11 @@ if __name__ == "__main__":
     # repeat until the user enters "quit" or "exit"
     while True:
         print("-----Enter 'quit' or 'exit' to exit.-----")
-        sexpr_str = input("-->Enter an S-expression: ")
-        if sexpr_str in ["quit", "exit"]:
+        expression_str = input("-->Enter an S-expression: ")
+        if expression_str in ["quit", "exit"]:
             break
         # parse the input string into an S-expression
-        sexpr = parse_expression(sexpr_str)
+        s_expression = parse_expression(expression_str)
         # evaluate the S-expression and print the result
-        result = evaluate_expression(sexpr)
+        result = evaluate_expression(s_expression)
         print(f"Result: {result}")
