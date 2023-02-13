@@ -38,16 +38,16 @@ def parse_expression(string):
     return current_list[0]
 
 
-def evaluate_expression(s_expr):
-    # get the operator from the first item in the sexpr
-    operator = s_expr[0]
+def evaluate_expression(expression):
+    # get the operator from the first item in the expression
+    operator = expression[0]
     if operator == "add":
         # if the operator is "add", return the sum of the rest of the items
-        return sum(map(evaluate_expression, s_expr[1:]))
+        return sum(map(evaluate_expression, expression[1:]))
     elif operator == "multiply":
         # if the operator is "multiply", return the product of the rest of the items
         result = 1
-        for operand in s_expr[1:]:
+        for operand in expression[1:]:
             result *= evaluate_expression(operand)
         return result
     elif operator.isdigit():
